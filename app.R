@@ -45,9 +45,9 @@ ui <- dashboardPage(
     dashboardBody(
       tabItems(
         tabItem(tabName = "sankey",  htmlOutput("sankey.plot")),
-        tabItem(tabName = "treemap", d3tree2Output("d3tree")),
-        tabItem(tabName = "globe",   htmlOutput("map")),
-        tabItem(tabName = "barchart",   htmlOutput("barchart"))
+        tabItem(tabName = "treemap", d3tree2Output("d3tree",height = 600, width = 950)),
+        tabItem(tabName = "globe",   htmlOutput("map",height = 600, width = 950)),
+        tabItem(tabName = "barchart",   htmlOutput("barchart",height = 600, width = 950))
       )
     )
   )
