@@ -25,7 +25,7 @@ ui <- dashboardPage(
         menuItem("Sankey Plot", tabName = "sankey", icon = icon("exchange")),
         conditionalPanel("input.sidebarmenu === 'sankey'",
                          radioButtons("radio.left", "Left:", c("Countries" = "Countries", "Regions" = "Regions"), selected="Countries"),
-                         radioButtons("radio.right", "Right:", c("Countries" = "Countries", "Regions" = "Regions"), selected="Regions")
+                         radioButtons("radio.right", "Right:", c("Countries" = "Countries", "Regions" = "Regions"), selected="Countries")
           ),
         menuItem("Map", tabName = "globe", icon = icon("globe")),
         conditionalPanel("input.sidebarmenu === 'globe'",
@@ -39,7 +39,7 @@ ui <- dashboardPage(
     dashboardBody(
       tabItems(
         tabItem(tabName = "sankey",  htmlOutput("sankey.plot")),
-        tabItem(tabName = "treemap", d3tree2Output("d3tree",height=600, width=800)),
+        tabItem(tabName = "treemap", d3tree2Output("d3tree",height=700, width=950)),
         tabItem(tabName = "globe",   htmlOutput("map"))
       )
     )
