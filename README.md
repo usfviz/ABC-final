@@ -40,6 +40,11 @@ The second panel shows map of the data. You can select either import or export, 
 
 The third panel is a treemap. It starts with the country, after you click, you can select import or export, the next phase would show you how much each type of product/service take up the whole import/export value.
 
+<img src="bar.png"/>
+
+The last panel is bar chart. You can see the country's export and import value by the categories. It shows a good comparison between the difference of export and import.
+
+
 ## Summary
 We have learned a lot from this final project and we fell deeply in love with Shiny in the progress.
 Shiny dashboard is absolutely beautiful and in our opinion much better looking than tablets.
