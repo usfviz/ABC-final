@@ -3,7 +3,8 @@
 Our name means that we want to make data visualization as easy as ABC.
 
 ## Team
-#### Alice Zhao :panda_face:, Valentin Vrzheshch :coffee:
+* Alice Zhao :panda_face:
+* Valentin Vrzheshch :coffee:
 
 Run gently in R:
 
