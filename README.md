@@ -1,4 +1,6 @@
-# Data Visualization project
+# TEAM ABC Data Visualization project
+
+Our name means that we want to make data visualization as easy as ABC.
 
 ## Team
 #### Alice Zhao :panda_face:, Valentin Vrzheshch :coffee:
@@ -36,3 +38,10 @@ The second panel shows map of the data. You can select either import or export, 
 <img src="treemap.png"/>
 
 The third panel is a treemap. It starts with the country, after you click, you can select import or export, the next phase would show you how much each type of product/service take up the whole import/export value.
+
+## Summary
+We have learned a lot from this final project and we fell deeply in love with Shiny in the progress.
+Shiny dashboard is absolutely beautiful and in our opinion much better looking than tablets.
+Also deploying the app on the website is cool too!
+Cheers.
+🥂
