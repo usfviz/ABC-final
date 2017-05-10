@@ -45,7 +45,7 @@ ui <- dashboardPage(
     dashboardBody(
       tabItems(
         tabItem(tabName = "sankey",  htmlOutput("sankey.plot")),
-        tabItem(tabName = "treemap", d3tree2Output("d3tree",height=700, width=950)),
+        tabItem(tabName = "treemap", d3tree2Output("d3tree")),
         tabItem(tabName = "globe",   htmlOutput("map")),
         tabItem(tabName = "barchart",   htmlOutput("barchart"))
       )
@@ -83,29 +83,24 @@ server <- function(input, output) {
     return(df_sankey_right)
     })
 
+  output$sankey.plot <- renderGvis({
+    gvisSankey(sub_df_sankey(), from="Reporter_description", to="Partner_description", weight="Value",
+               options = list(height = 700, width = 900,
+                              sankey="{link:{color:{fill:'lightblue', stroke: 'black', strokeWidth: .1}}}")
+    )
+  })
+  
   output$map <- renderGvis({
     map <- gvisGeoChart(sub_df_map(), 
                         locationvar="Reporter_code",
                         hovervar = "Reporter_description",
                         colorvar='Value',
                         options=list(projection="kavrayskiy-vii", 
-                                    displayMode="regions",  height = 600, width = 900,
+                                    displayMode="regions",  height = 700, width = 900,
                                     colorAxis="{colors: ['orange']}"
                                     )
                         )
           return(map)
-    })
-
-  output$sankey.plot <- renderGvis({
-    gvisSankey(sub_df_sankey(), from="Reporter_description", to="Partner_description", weight="Value",
-               options = list(height = 600, width = 900,
-                              sankey="{link:{color:{fill:'lightblue', stroke: 'black', strokeWidth: .1}}}")
-              )
-    })
-  
-  output$barchart <- renderGvis({
-    gvisBarChart(sub_df_barchart(), xvar = "Reporter_description", yvar = c("Exports", "Imports"),
-                 options = list( height = 900))
     })
 
   output$d3tree <- renderD3tree2({
@@ -116,6 +111,11 @@ server <- function(input, output) {
       vSize="Value", palette="-RdGy", fontsize.legend = 9,
       format.legend = list(scientific = FALSE, big.mark = " "))
     d3tree2(tm, rootname = "International Trade")
+  })
+  
+  output$barchart <- renderGvis({
+    gvisBarChart(sub_df_barchart(), xvar = "Reporter_description", yvar = c("Exports", "Imports"),
+                 options = list( height = 800))
   })
 }
 
